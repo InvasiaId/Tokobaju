@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Agency - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/stylesCatalog.css" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/Email/css/stylesEmail.css" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/Footer/css/stylesFooter.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/Deskripsi Baju/css/stylesBaju.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const cards = document.querySelectorAll(".card-top");
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("slide-in");
+                            // Optional: remove observer so animation only happens once
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.2 // 20% masuk viewport baru animasi jalan
+                });
+
+                cards.forEach(card => {
+                    observer.observe(card);
+                });
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const cards = document.querySelectorAll(".card-bottom");
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("animate-in-right");
+                            observer.unobserve(entry.target); // hanya animasi sekali
+                        }
+                    });
+                }, {
+                    threshold: 0.2
+                });
+
+                cards.forEach(card => {
+                    observer.observe(card);
+                });
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+
+            document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+    </script>
+
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="/logo.png" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0" >
+                        <li class="nav-item"><a class="nav-link" href="#catalog" style="color: white;">Catalog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about" style="color: white;">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#promo" style="color: white;">Promo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#testimoni" style="color: white;">Testimoni</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contactus" style="color: white;">Contact</a></li>
+
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            <a href="cart.html" style="color: black; text-decoration:none;">Cart</a>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome To Invasia Shop</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <a class="btn btn-primary btn-xl text-uppercase fw-bolder p-3 btn-popup" style="background-color: black; color: white; width: 200px;" href="#catalog">Buy Now</a>
+            </div>
+        </header>
+
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder ">Our Products</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">we hope you loved it</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Section-->
+        <section class="py-5" id="catalog">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card  card-top h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="/tshrit1 copy.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Divine Clash</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    Rp. 350.000
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Deskripsi Baju/tshirt1.html">Buy</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card card-top h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="/tshirt2.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Vortex League</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">Rp. 500.000</span>
+                                    Rp.399.000
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Deskripsi Baju/tshirt2.html">Buy</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card card-top h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="/tshirt3.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Pink Eclipse</h5>
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">Rp.900.000</span>
+                                    Rp.699.999
+                                    
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Deskripsi Baju/tshirt3.html">Buy</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card card-top h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="/tshirt4.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Yūgen Drift</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    Rp. 1.220.600
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Deskripsi Baju/tshirt4.html">Buy</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card card-bottom h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="/tshirt5.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Zen Blossom</h5>
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">Rp.1.250.000</span>
+                                    Rp.1.099.999
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Deskripsi Baju/tshirt5.html">Buy</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card card-bottom h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="/tshirt6.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Oblivion Flame</h5>
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    Rp. 250.000
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Deskripsi Baju/tshirt6.html">Buy</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card card-bottom h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="/tshirt7.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Outrage Protocol</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">Rp.250.000</span>
+                                    Rp.199.999
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Deskripsi Baju/tshirt7.html">Buy</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card card-bottom h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="/tshirt9.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Ghost Core</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    Rp. 200.000
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Deskripsi Baju/tshirt8.html">Buy</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Header-->
+        <header class="bg-dark" style="display: flex; align-items:center; justify-content:center;" id="promo">
+            <img src="/promo2.jpg" alt="" style="width: 80%;">
+        </header>
+
+        <!-- About Us -->
+        <section class="about-section py-5" id="about">
+            <div class="container">
+                <div class="row align-items-center mb-5 slide-in-left">   
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img src="/About.jpg" class="img-fluid rounded shadow w-75" alt="Toko Baju">
+                    </div>
+                    <div class="col-md-6  slide-in-right">
+                        <h2 class="about-title mb-3 fw-bolder">About Us</h2>
+                        <p class="about-text">
+                            Fashion Elegan, untuk Penampilanmu yang Istimewa
+                            Invasia lahir dari hasrat mendalam 
+                            terhadap gaya dan kualitas. Sejak berdiri di tahun 
+                            2000, kami berkomitmen memberikan koleksi
+                            fashion yang tak hanya estetis, tetapi juga nyaman 
+                            dipakai sepanjang hari. Setiap produk dipilih dari 
+                            bahan-bahan premium dengan tekstur halus, warna yang 
+                            tahan lama, dan jahitan rapi untuk menghadirkan kesan 
+                            mewah tanpa harus menguras kantong.
+                        </p>
+                        <p class="about-text">
+                            Kami menggabungkan tren global dan kekayaan budaya lokal, 
+                            menciptakan potongan yang modern namun tetap berjiwa Indonesia. 
+                            Pelayanan customer-oriented adalah prioritas kami mulai dari konsultasi 
+                            gaya, proses pemesanan yang mudah, hingga layanan after-sales yang cepat 
+                            dan ramah. Karena bagi kami, fashion adalah tentang merasakan istimewa, 
+                            bukan sekadar dilihat istimewa.
+                        </p>
+                    </div>
+                </div>
+
+                <img src="/line2.png" alt="">
+
+                <div class="row align-items-center mt-5">   
+                        <div class="col-md-6  slide-in-left">
+                        <h2 class="about-title mb-3 fw-bolder">Our History</h2>
+                        <p class="about-text">
+                        Tahun 2000, di sebuah sudut kecil pasar tradisional, 
+                        berdirilah toko sederhana yang hanya bermodal kain, 
+                        mesin jahit, dan semangat besar. Pendiri toko ini adalah 
+                        seorang anak muda yang percaya bahwa baju bukan sekadar 
+                        penutup tubuh, tapi cerminan karakter dan kenyamanan hidup sehari-hari.
+
+                        Awalnya, semua dikerjakan secara manual: mulai dari memilih kain sendiri 
+                        di Tanah Abang, menjahit hingga larut malam, hingga melayani pelanggan 
+                        satu per satu. Nama toko ini mulai dikenal karena kualitas jahitan yang 
+                        rapi, bahan yang nyaman, dan pelayanan yang ramah.
+
+
+                        </p>
+                        <p class="about-text">
+                        Seiring berjalannya waktu, Ia memperkenalkan sentuhan desain modern, 
+                        memasarkan produk lewat internet, dan membawa toko ini ke dunia digital 
+                        tanpa melupakan akar tradisionalnya.
+
+                        Kini, lebih dari 20 tahun berlalu, Invasia telah berkembang menjadi 
+                        brand lokal yang dipercaya banyak pelanggan dari berbagai daerah. Namun 
+                        satu hal yang tidak pernah berubah: komitmen kami untuk menghadirkan 
+                        pakaian berkualitas tinggi dengan bahan premium dan kenyamanan maksimal.
+
+                        Kami bukan hanya menjual baju kami merajut cerita, dari generasi ke generasi.
+                        </p>
+                    </div>
+                    <div class="col-md-6 mb-4 mb-md-0  slide-in-right">
+                        <img src="/toko.jpg" class="img-fluid rounded shadow w-75" alt="Toko Baju" style="margin-left: 100px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Header-->
+    <header class="bg-dark mb-5 mt-5" style="display: flex; align-items:center; justify-content:center;" id="promo">
+        <img src="/promo4.jpg" alt="" style="width: 100%;">
+    </header>
+
+        <!-- Testimoni section -->
+        <div class="container py-5" id="testimoni">
+        <h2 class="text-center mb-4">Apa Kata Mereka?</h2>
+        <div class="row g-4">
+
+      <!-- Testimoni 1 -->
+      <div class="col-md-4">
+        <div class="card text-center p-3 shadow testimonial-card">
+          <img src="/person1.jpg" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Foto pelanggan">
+          <h5 class="mb-1">Chakra Slebew</h5>
+          <div class="stars mb-2">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+          </div>
+          <p class="text-muted">"Bahannya adem dan potongannya pas banget di badan. Ga nyangka bisa dapet kualitas sebagus ini dari brand lokal!"</p>
+        </div>
+      </div>
+
+      <!-- Testimoni 2 -->
+      <div class="col-md-4">
+        <div class="card text-center p-3 shadow testimonial-card">
+          <img src="/person2.jpg" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Foto pelanggan">
+          <h5 class="mb-1">Tatum Bedentum</h5>
+          <div class="stars mb-2">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+          </div>
+          <p class="text-muted">"Modelnya kekinian banget, cocok buat nongkrong maupun kerja. Bakal order lagi sih ini mah!"</p>
+        </div>
+      </div>
+
+      <!-- Testimoni 3 -->
+      <div class="col-md-4">
+        <div class="card text-center p-3 shadow testimonial-card">
+          <img src="/person4.jpg" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Foto pelanggan">
+          <h5 class="mb-1">Ceu Imah Plaju</h5>
+          <div class="stars mb-2">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+          </div>
+          <p class="text-muted">"Pengemasan rapi, pengiriman cepat, dan kualitas bajunya mewah banget. Worth every penny!"</p>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="container py-5">
+    <div class="row g-4">
+
+      <!-- Testimoni 4 -->
+      <div class="col-md-4">
+        <div class="card text-center p-3 shadow testimonial-card">
+          <img src="/person3.jpg" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Foto pelanggan">
+          <h5 class="mb-1">Iam OPI</h5>
+          <div class="stars mb-2">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+          </div>
+          <p class="text-muted">"Pertama kali beli langsung jatuh cinta! Cutting-nya pas, detailnya rapi, dan bahannya super nyaman dipakai seharian."</p>
+        </div>
+      </div>
+
+      <!-- Testimoni 5 -->
+      <div class="col-md-4">
+        <div class="card text-center p-3 shadow testimonial-card">
+          <img src="/person5.JPG" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Foto pelanggan">
+          <h5 class="mb-1">Erik Jambi</h5>
+          <div class="stars mb-2">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star-half-alt text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+          </div>
+          <p class="text-muted">"Cocok buat cowok yang pengen tampil simple tapi tetap keren. Suka banget sama warna dan teksturnya!"</p>
+        </div>
+      </div>
+
+      <!-- Testimoni 6 -->
+      <div class="col-md-4">
+        <div class="card text-center p-3 shadow testimonial-card">
+          <img src="/person6.jpg" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Foto pelanggan">
+          <h5 class="mb-1">Ejak preman sekojo</h5>
+          <div class="stars mb-2">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+          </div>
+          <p class="text-muted">"Kesan elegan tapi tetap santai. Baju dari sini bikin aku tampil beda di setiap acara. Recommended banget!"</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="container py-5">
+            <div class="row g-4 justify-content-center" >
+      <!-- Testimoni 7 -->
+      <div class="col-md-4">
+        <div class="card text-center p-3 shadow testimonial-card">
+          <img src="/person9.JPG" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Foto pelanggan">
+          <h5 class="mb-1">WIWITT</h5>
+          <div class="stars mb-2">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star-half-alt text-warning"></i>
+          </div>
+          <p class="text-muted">"Bajunya premium banget. Dipakai meeting oke, dipakai jalan juga tetap stylish. Jahitannya rapi dan nyaman dipakai!"</p>
+        </div>
+      </div>
+
+      <!-- Testimoni 8 -->
+      <div class="col-md-4">
+        <div class="card text-center p-3 shadow testimonial-card">
+          <img src="/person8.JPG" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Foto pelanggan">
+          <h5 class="mb-1">OCD (OCID)</h5>
+          <div class="stars mb-2">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+          </div>
+          <p class="text-muted">"Pertama kali coba beli karena teman rekomendasiin. Dan ternyata bener, bajunya bener-bener beda kelas!"</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Partner -->
+  <div class="container py-5 text-center">
+    <h2 class="mb-5">Our Partnership</h2>
+    
+    <div class="slider-container">
+      <div class="slider">
+        <!-- Logo Partner -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/GoTo_logo.svg/800px-GoTo_logo.svg.png" alt="GoTo" />
+        <img src="https://images.seeklogo.com/logo-png/37/2/tokopedia-logo-png_seeklogo-373974.png" alt="Tokopedia" />
+        <img src="/shopee.png" alt="Shopee" />
+        <img src="https://images.seeklogo.com/logo-png/0/1/alibaba-com-logo-png_seeklogo-6545.png" alt="Alibaba" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgMyrGSq5MwatV7EvmSOezndV2vv1TpTwMDw&s" alt="blibli" />
+        <img src="https://logowik.com/content/uploads/images/matahari7891.logowik.com.webp" alt="matahari" />
+        <img src="https://static-id.zacdn.com/cms/orignal-Logo-ZALORA-Indonesia.jpg" alt="zalora" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Shopify_logo_2018.svg/1200px-Shopify_logo_2018.svg.png" alt="Shopify" />
+        <img src="https://www.polsri.ac.id/files/2011/01/logo-polsri.png" alt="poltek" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl3BdMTpvgLeZDlOTnlGIBLWSC7I64ZABTHw&s" alt="wix" />
+
+
+      </div>
+    </div>
+  </div>
+
+        <!-- Contact section-->
+        <section class="bg-light py-5" id="contactus">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                    <h2 class="fw-bolder">Get in touch</h2>
+                    <p class="lead mb-0">We'd love to hear from you</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <label for="name">Full name</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <label for="email">Email address</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <!-- Phone number input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <label for="phone">Phone number</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                            <!-- Message input-->
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">Message</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
+                            <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">
+                            2201 Invasia.Id
+                            <br />
+                            Clark, MO 65243
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://x.com/InvasiaId"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/m-dandi-fadli-250398273/"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">About Us</h4>
+                        <p class="lead mb-0">
+                            Invasia was founded in 2000
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
